@@ -69,7 +69,6 @@ html {
 
 header {
   background-color: #d3d3d3;
-  height: 50px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -77,13 +76,11 @@ header {
 
 .logo {
   margin-left: 40px;
-  font-size: 28px;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 .logo-img {
-  width: 3.6rem;
-  height: 3.6rem;
+  width: 100px;
+  border-radius: 50%;
 }
 
 nav {
@@ -101,7 +98,7 @@ nav {
   gap: 2.8rem;
   list-style: none;
   font-size: 24px;
-  margin: 0 2rem;
+  margin: 0 2.5rem;
 }
 
 .nav-menu ul a {
