@@ -81,6 +81,11 @@ header {
   font-family: 'Courier New', Courier, monospace;
 }
 
+.logo-img {
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
 nav {
   display: flex;
 }
