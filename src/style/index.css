@@ -1,4 +1,68 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-start {
+  justify-content: start;
+  align-items: center;
+}
+
+.flex-end {
+  justify-content: end;
+  align-items: center;
+}
+
+.meal-container {
+  display: grid;
+  grid-template-columns: repeat(5, 20rem);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.meal-img {
+  width: 20rem;
+}
+
+.like-btn {
+  padding: 0.5rem 1rem;
+}
+
+.like {
+  display: flex;
+  gap: 3rem;
+  font-size: 1.8rem;
+  width: 20rem;
+}
+
+.btn {
+  padding: 0.8rem 7rem;
+}
+
+.meal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
