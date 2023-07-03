@@ -1,4 +1,6 @@
 import fetchPro from './fetchPro.js';
+import getLike from './getLike.js';
+import sendLikes from './sendLikes.js';
 
 const mealContainer = document.querySelector('.meal-container');
 
@@ -21,16 +23,17 @@ const renderMeals = async () => {
     const likeContainer = document.createElement('div');
     likeContainer.classList.add('like');
     const likeBtn = document.createElement('button');
-    likeBtn.classList.add('like-btn');
+    likeBtn.className = 'like-btn';
+    likeBtn.setAttribute('data-show', `${meal.idMeal}`);
     const heartIcon = document.createElement('i');
     heartIcon.className = 'fa-sharp fa-regular fa-heart fa-xl';
     likeBtn.appendChild(heartIcon);
     const likeInfo = document.createElement('div');
     likeInfo.classList.add('flex');
     const likeCount = document.createElement('p');
-    likeCount.classList.add(`like-${meal.idMeal}`);
+    likeCount.className = `like-${meal.idMeal}`;
     const likeText = document.createElement('p');
-    likeText.innerText = 'like';
+    likeText.innerText = 'likes';
     likeInfo.appendChild(likeCount);
     likeInfo.appendChild(likeText);
     likeContainer.appendChild(likeBtn);
@@ -45,6 +48,25 @@ const renderMeals = async () => {
     mealCard.appendChild(commentBtn);
     mealContainer.appendChild(mealCard);
     /* eslint-enable */
+  });
+
+  const likeData = await getLike();
+
+  likeData.forEach((like) => {
+    document.querySelector(`.like-${like.item_id}`).textContent = like.likes;
+  });
+  const likeBtns = document.querySelectorAll('.like-btn');
+  likeBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const idLike = e.target.closest('.like-btn').dataset.show;
+      if (idLike) {
+        const likeCount = +document.querySelector(`.like-${idLike}`)
+          .textContent;
+        document.querySelector(`.like-${idLike}`).textContent = likeCount + 1;
+        sendLikes({ item_id: `${idLike}` });
+      }
+    });
   });
 };
 
