@@ -1,15 +1,17 @@
 import fetchPro from './fetchPro.js';
 import getLike from './getLike.js';
 import sendLikes from './sendLikes.js';
+import counterHomepage from './counterHomepage.js';
 
 const mealContainer = document.querySelector('.meal-container');
+const itemCounter = document.querySelector('.counter');
 
 const renderMeals = async () => {
   const { meals } = await fetchPro(
     'https://www.themealdb.com/api/json/v1/1/filter.php?c=vegetarian',
   );
+  itemCounter.textContent = `(${counterHomepage(meals)})`;
   mealContainer.innerHTML = '';
-
   meals.forEach((meal) => {
     /* eslint-disable */
     const mealCard = document.createElement('div');
