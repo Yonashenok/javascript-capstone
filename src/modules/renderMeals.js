@@ -2,9 +2,11 @@ import fetchPro from './fetchPro.js';
 import getLike from './getLike.js';
 import sendLikes from './sendLikes.js';
 import counterHomepage from './counterHomepage.js';
+import renderPopComment from './renderPopComment.js';
 
 const mealContainer = document.querySelector('.meal-container');
 const itemCounter = document.querySelector('.counter');
+const overly = document.querySelector('.overly');
 
 const renderMeals = async () => {
   const { meals } = await fetchPro(
@@ -58,6 +60,15 @@ const renderMeals = async () => {
     document.querySelector(`.like-${like.item_id}`).textContent = like.likes;
   });
   const likeBtns = document.querySelectorAll('.like-btn');
+
+  mealContainer.addEventListener('click', (e) => {
+    e.preventDefault();
+    const id = e.target.dataset.tap;
+    if (id) {
+      overly.classList.toggle('hidden');
+      renderPopComment(meals, id);
+    }
+  });
   likeBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
