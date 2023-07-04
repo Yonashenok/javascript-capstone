@@ -115,3 +115,20 @@ nav {
   text-decoration: underline;
   font-size: 26px;
 }
+
+footer {
+  width: 100%;
+  background-color: #d3d3d3;
+  padding: 20px;
+  border-top: 2px solid #363636;
+}
+
+footer p {
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+footer a {
+  color: black;
+}
