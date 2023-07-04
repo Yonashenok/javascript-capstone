@@ -133,20 +133,21 @@ nav {
 
 .model {
   width: 90rem;
-  height: 85rem;
+  height: 70rem;
   padding: 3rem;
   position: relative;
-  background-color: greenyellow;
+  background-color: #696969;
 }
 
 .close-btn {
   border-radius: 20rem;
   padding: 1.5rem 1.5rem;
-  background-color: #fff;
+  background-color: #696969;
   position: absolute;
   top: 1rem;
-  right: 59rem;
+  right: 1rem;
   z-index: 10;
+  color: white;
 }
 
 .hidden {
@@ -154,6 +155,6 @@ nav {
 }
 
 .img-thumb {
-  width: 75rem;
-  height: 50rem;
+  width: 50rem;
+  height: 40rem;
 }
