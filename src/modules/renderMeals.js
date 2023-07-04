@@ -2,13 +2,15 @@ import fetchPro from './fetchPro.js';
 import getLike from './getLike.js';
 import sendLikes from './sendLikes.js';
 import counterHomepage from './counterHomepage.js';
+import renderPopComment from './renderPopComment.js';
 
 const mealContainer = document.querySelector('.meal-container');
 const itemCounter = document.querySelector('.counter');
+const overly = document.querySelector('.overly');
 
 const renderMeals = async () => {
   const { meals } = await fetchPro(
-    'https://www.themealdb.com/api/json/v1/1/filter.php?c=vegetarian',
+    'https://www.themealdb.com/api/json/v1/1/filter.php?c=vegetarian'
   );
   itemCounter.textContent = `(${counterHomepage(meals)})`;
   mealContainer.innerHTML = '';
@@ -58,6 +60,16 @@ const renderMeals = async () => {
     document.querySelector(`.like-${like.item_id}`).textContent = like.likes;
   });
   const likeBtns = document.querySelectorAll('.like-btn');
+
+  mealContainer.addEventListener('click', (e) => {
+    e.preventDefault();
+    const id = e.target.dataset.tap;
+    console.log(id);
+    if (id) {
+      overly.classList.toggle('hidden');
+      renderPopComment(meals, id);
+    }
+  });
   likeBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
