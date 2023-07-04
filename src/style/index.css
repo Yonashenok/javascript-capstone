@@ -95,10 +95,15 @@ nav {
 
 .nav-menu ul {
   display: flex;
-  gap: 2.8rem;
+  gap: 4rem;
   list-style: none;
   font-size: 24px;
   margin: 0 2.5rem;
+}
+
+.link-counter {
+  display: flex;
+  gap: 1rem;
 }
 
 .nav-menu ul a {
