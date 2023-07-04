@@ -64,7 +64,6 @@ const renderMeals = async () => {
   mealContainer.addEventListener('click', (e) => {
     e.preventDefault();
     const id = e.target.dataset.tap;
-    console.log(id);
     if (id) {
       overly.classList.toggle('hidden');
       renderPopComment(meals, id);
