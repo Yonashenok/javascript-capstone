@@ -10,7 +10,7 @@ const overly = document.querySelector('.overly');
 
 const renderMeals = async () => {
   const { meals } = await fetchPro(
-    'https://www.themealdb.com/api/json/v1/1/filter.php?c=vegetarian',
+    'https://www.themealdb.com/api/json/v1/1/filter.php?c=vegetarian'
   );
   itemCounter.textContent = `(${counterHomepage(meals)})`;
   mealContainer.innerHTML = '';
