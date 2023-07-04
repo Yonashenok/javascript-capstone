@@ -1,5 +1,4 @@
-import { add } from 'lodash';
-import { display, addComment } from './fetchComment';
+import { display, addComment } from './fetchComment.js';
 
 const model = document.querySelector('.model');
 
@@ -32,7 +31,7 @@ const renderPopComment = (data, id) => {
                 </form>
           </section>
       </div>
-    `
+    `,
     )
     .join('');
   model.innerHTML = '';
