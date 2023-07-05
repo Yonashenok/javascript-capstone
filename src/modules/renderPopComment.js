@@ -29,7 +29,7 @@ const renderPopComment = (data, id) => {
                 </form>
           </section>
       </div>
-    `
+    `,
     )
 
     .join('');

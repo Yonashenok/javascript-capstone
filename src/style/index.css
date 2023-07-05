@@ -45,13 +45,25 @@ html {
   width: 25rem;
 }
 
+.like-btn {
+  padding: 1rem;
+  background-color: white;
+  color: red;
+  border: none;
+}
+
+.like-btn:hover {
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+}
+
 .like {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
   font-size: 1.8rem;
-  width: 25rem;
 }
 
 .btn {
@@ -192,8 +204,8 @@ footer p {
 }
 
 .img-thumb {
-  width: 50rem;
-  height: 40rem;
+  width: 55rem;
+  height: 35rem;
 }
 
 .comment-section {
@@ -245,6 +257,14 @@ form h2 {
   color: antiquewhite;
 }
 
+input {
+  padding: 5px;
+}
+
+textarea {
+  padding: 5px;
+}
+
 input::placeholder {
   color: #363636;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -253,6 +273,26 @@ input::placeholder {
 textarea::placeholder {
   color: #363636;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.comment-container {
+  border: 2px solid #363636;
+}
+
+.list-items {
+  border-bottom: 1px solid #363636;
+  padding: 0.5rem;
+  font-size: 16px;
+}
+
+.comment-display h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.list-items:nth-child(even) {
+  background-color: lightgray;
 }
 
 /* Desktop [601px -> 1200px] */
