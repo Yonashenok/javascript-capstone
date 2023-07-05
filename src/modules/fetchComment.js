@@ -8,7 +8,7 @@ const display = async (comments, id, commentCounter) => {
   const listComments = commentData
     .map(
       (comment) => `<div class="list-items"> 
- ${comment.creation_date}  ${comment.username}: ${comment.comment}</div>`
+ ${comment.creation_date}  ${comment.username}: ${comment.comment}</div>`,
     )
     .join('');
 
