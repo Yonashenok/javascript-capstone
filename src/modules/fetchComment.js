@@ -1,14 +1,15 @@
 import fetchPro from './fetchPro.js';
 import getComment from './getComments.js';
 
-const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/hqiz5X9EpndT4RnMoRZ6/comments/';
+const url =
+  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/hqiz5X9EpndT4RnMoRZ6/comments/';
 
 const display = async (comments, id) => {
   const commentData = await getComment(id);
   const listComments = commentData
     .map(
       (comment) => `<div class="list-items"> 
- ${comment.creation_date}  ${comment.username}: ${comment.comment}</div>`,
+ ${comment.creation_date}  ${comment.username}: ${comment.comment}</div>`
     )
     .join('');
   comments.innerHTML = '';
