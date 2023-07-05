@@ -62,7 +62,7 @@
 
 >
 
-- [Live Demo]
+- [Live Demo](https://yonashenok.github.io/javascript-capstone/)
 <!-- GETTING STARTED -->
 
 >
