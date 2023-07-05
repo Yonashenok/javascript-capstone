@@ -246,5 +246,5 @@ textarea::placeholder {
 }
 
 .list-items:nth-child(even) {
-  background-color: gray;
+  background-color: lightgray;
 }
