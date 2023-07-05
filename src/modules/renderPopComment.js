@@ -7,18 +7,16 @@ const renderPopComment = (data, id) => {
   const markUp = meals
     .map(
       (meal) => `
-      
         <div class="flex flex-col flex-center">
         <div class="like flex-center">
                   <p class="space">${meal.strMeal}</p>
                 </div>
           <div>
             <img class="img-thumb" src="${meal.strMealThumb}" alt="" />
-            </div>
-                
+            </div>       
               <section class="comment-section">
                 <div class="comment-display">
-                  <h2>Comments</h2>
+                  <div class="counter"><h2>Comments</h2><p class="Comment-counter"></p></div>
                   <div class="comment-container" id="comment-container"></div>
                 </div>
                 <form class="comment-form flex flex-col" id="submit-com" action="/">
@@ -33,18 +31,20 @@ const renderPopComment = (data, id) => {
       </div>
     `,
     )
+
     .join('');
   model.innerHTML = '';
   model.insertAdjacentHTML('afterbegin', markUp);
 
   const comments = document.getElementById('comment-container');
   const submitCom = document.getElementById('submit-com');
-  display(comments, id);
+  const commentCounter = document.querySelector('.Comment-counter');
+  display(comments, id, commentCounter);
   submitCom.addEventListener('submit', (e) => {
     e.preventDefault();
     addComment(e, id);
     setTimeout(() => {
-      display(comments, id);
+      display(comments, id, commentCounter);
     }, 1000);
   });
 };

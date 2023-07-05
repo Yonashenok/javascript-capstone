@@ -1,9 +1,8 @@
 import fetchPro from './fetchPro.js';
+import { API_URL_GETLIKE } from './config.js';
 
 const getLike = async () => {
-  const likeData = await fetchPro(
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/hqiz5X9EpndT4RnMoRZ6/likes',
-  );
+  const likeData = await fetchPro(API_URL_GETLIKE);
   return likeData.slice(7);
 };
 

@@ -1,10 +1,11 @@
 import fetchPro from './fetchPro.js';
 import getComment from './getComments.js';
+import counterHomepage from './counterHomepage.js';
+import { API_URL_COMMENT } from './config.js';
 
-const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/hqiz5X9EpndT4RnMoRZ6/comments/';
-
-const display = async (comments, id) => {
+const display = async (comments, id, commentCounter) => {
   const commentData = await getComment(id);
+  commentCounter.textContent = `(${counterHomepage(commentData)})`;
   const listComments = commentData
     .map(
       (comment) => `<div class="list-items"> 
@@ -25,7 +26,7 @@ const addComment = async (e, id) => {
     username: name,
     comment,
   };
-  fetchPro(url, data);
+  fetchPro(API_URL_COMMENT, data);
   document.getElementById('name').value = '';
   document.getElementById('comment').value = '';
 };

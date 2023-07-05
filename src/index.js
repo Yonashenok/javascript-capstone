@@ -1,6 +1,6 @@
-import './style/index.css';
 import renderMeals from './modules/renderMeals.js';
 import logo from './images/logo.png';
+import './style/index.css';
 
 renderMeals();
 const closeBtn = document.querySelector('.close-btn');

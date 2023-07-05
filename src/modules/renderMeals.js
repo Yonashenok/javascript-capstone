@@ -1,17 +1,16 @@
-import fetchPro from './fetchPro.js';
-import getLike from './getLike.js';
-import sendLikes from './sendLikes.js';
 import counterHomepage from './counterHomepage.js';
 import renderPopComment from './renderPopComment.js';
+import sendLikes from './sendLikes.js';
+import fetchPro from './fetchPro.js';
+import getLike from './getLike.js';
+import { API_URL_MEALS } from './config.js';
 
 const mealContainer = document.querySelector('.meal-container');
 const itemCounter = document.querySelector('.counter');
 const overly = document.querySelector('.overly');
 
 const renderMeals = async () => {
-  const { meals } = await fetchPro(
-    'https://www.themealdb.com/api/json/v1/1/filter.php?c=vegetarian',
-  );
+  const { meals } = await fetchPro(API_URL_MEALS);
   itemCounter.textContent = `(${counterHomepage(meals)})`;
   mealContainer.innerHTML = '';
   meals.forEach((meal) => {
@@ -40,10 +39,10 @@ const renderMeals = async () => {
     likeText.innerText = 'likes';
     likeInfo.appendChild(likeCount);
     likeInfo.appendChild(likeText);
-    likeContainer.appendChild(likeBtn);
     likeContainer.appendChild(likeInfo);
+    likeContainer.appendChild(likeBtn);
     const commentBtn = document.createElement('button');
-    commentBtn.className = 'btn btn-comment';
+    commentBtn.className = 'btn-comment';
     commentBtn.setAttribute('data-tap', `${meal.idMeal}`);
     commentBtn.textContent = 'Comment';
     mealCard.appendChild(mealImage);
