@@ -63,6 +63,8 @@
 >
 
 - [Live Demo](https://yonashenok.github.io/javascript-capstone/)
+
+- [Zoom](https://drive.google.com/file/d/1HVq3100k04jXyePyCjIpqW_jGWpC0D7q/view)
 <!-- GETTING STARTED -->
 
 >
