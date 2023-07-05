@@ -1,19 +1,21 @@
 import fetchPro from './fetchPro.js';
 import getComment from './getComments.js';
-import counterHomepage from './counterHomepage.js';
+import counterComment from './counterComments.js';
 import { API_URL_COMMENT } from './config.js';
 
 const display = async (comments, id, commentCounter) => {
   const commentData = await getComment(id);
-  commentCounter.textContent = `(${counterHomepage(commentData)})`;
   const listComments = commentData
     .map(
       (comment) => `<div class="list-items"> 
  ${comment.creation_date}  ${comment.username}: ${comment.comment}</div>`,
     )
     .join('');
+
   comments.innerHTML = '';
   comments.insertAdjacentHTML('afterbegin', listComments);
+  const numComment = document.querySelectorAll('.list-items');
+  commentCounter.textContent = `(${counterComment(numComment)})`;
 };
 
 const addComment = async (e, id) => {
